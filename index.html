@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="./img/favicon.ico">
+      
+      <title>Your Body, (Not) Your Choice</title>
+       <!-- Bootstrap core CSS -->
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/bootstrap-theme.css" rel="stylesheet" media="screen">
+    
+        <!--main stylesheet-->
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans|Roboto+Slab' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="css/style.css"/>
+
+  </head>
+  <body>
+    <!-- navbar: fix active state-->
+    <div id="custom-bootstrap-menu" class="navbar navbar-custom navbar-fixed-top" role="navigation" style="background-color:#e1e1e1;">
+      <div class="container-fluid">
+        <div class="navbar-header"><a class="navbar-brand navbar-left" href="index.html" style="font-family: 'Roboto Slab';"><strong>Your Body, (Not) Your Choice</strong></a>
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse navbar-menubuilder">
+          <ul class="nav navbar-nav navbar-right" style="Open Sans, sans-serif">
+            <li class="active"><a href="#map">Map</a></li>
+            <li><a href="#analysis">Analysis</a></li>
+            <li><a href="#about">About</a></li>
+          </ul>
+        </div>
+      </div>
+    </div><!-- nav-bar end -->
+    <div class="jumbotron"><br>
+          <section id="map"></section>   
+      <p>Since the landmark Supreme Court decision Roe v. Wade in 1973, which legalized abortion throughout in the U.S., states across the country have slowly chipped away at this federally protected right. We are here to tell this story.</p>
+</div> <!-- end jumbotron -->
+      
+  
+        <div class="main-menu">
+            <div class="menu-inset" style="width:200px;height:318px;">
+            </div>
+            <div class="menu-options">
+                <div class="Overview" style="width:125px;height:53px;">
+                    Report Card</div>
+                <div class="Prohibited" style="width:125px;height:53px;">
+                    Prohibited At</div>
+                <div class="Counseling" style="width:125px;height:53px;">
+                    Mandated<br>Counseling</div>
+                <div class="Waiting" style="width:125px;height:53px;">
+                    Waiting<br>Period</div>
+                <div class="Parental" style="width:125px;height:53px;">
+                    Parental<br>Consent</div>
+                <div class="Ultrasound" style="width:125px;height:53px;">
+                    Mandatory<br>Ultrasound</div>
+            </div>
+        <div class="overlay-menu">
+            <div class="cpc-section">
+                <div class="cpc" id ="cpc-centers" style="width:125px;height:60px;">
+                    <strong>Show: </strong><br>Crisis Pregnancy Centers</div>
+                <div class ="cpc-inset" id="cpc-inset" style="width:198px;height:60px;"></div>
+            </div>
+            <div class="abortion-section">
+                <div class="abortion" id = "abortion-centers" style="width:125px;height:60px;">
+                    <strong>Show: </strong><br>Abortion Providers</div>
+                <div class="abortion-inset" id="abortion-inset" style="width:198px;height:60px;"></div>
+            </div>
+        </div>
+    </div>
+    <!-- includes description and play/pause buttons and dropdown -->
+    <div class="menu-info">
+    </div>
+    <br>
+    <div class="map"> <!-- map svg is drawn in main.js -->
+    </div>  
+    <div class="sequence-buttons">
+        <div class="button">
+            <button type="button" class="stepBackward">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            </button>
+            <button type="button" class="play">
+                <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+            </button>
+            <button type="button" class="pause">
+               <span class="glyphicon glyphicon-pause" aria-hidden="true"></span>
+            </button>
+            <button type="button" class="stepForward">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            </button>
+        </div>
+    </div>  
+    <!-- end map -->
+
+    <section id="graph"></section>   
+    <div class="graph">
+    </div>  <!-- end graph -->
+      
+    <section id="analysis"></section>  
+    <div class="container">
+    <div id="AnalysisBox">
+        <div class="page-header"><br><h1>  </h1></div>
+<!-- ==============================
+            OVERVIEW 
+===================================-->
+<p><i>Due to complex laws, political jargon, and emotional fervor, abortion policy is a contentious topic. There is a wealth of information and misinformation. The combination of vague terminology and lack of uniformity among state laws makes it difficult to interpret the true national status of abortion rights.
+<p>This is a challenging subject to talk about, but we believe it is important to make the information that we have collected available. We do not believe that all people who consider themselves pro-life intend to cause harm or restrict women's rights. Regardless, that is what we think these laws do. 
+<p>Below, we hope to shed some light on various types of abortion restrictions and explain why they're considered controversial and harmful.</i>
+    <h2>Background</h2>
+<p>In 1973, the Supreme Court decided in the case of Roe v. Wade that abortion fell within the right to privacy protected by the Fourteenth Amendment. This decision prevented states from interfering with a woman’s access to abortion in the first trimester, but allowed states to regulate the second & third trimester provided the regulations protected the health of the mother.<sup><a href="#citejump">[1]</a></sup>
+<p><div class = "letscenter"><img src="img/BanMap.png"></div>
+<p>Since then, states have passed legislation to restrict a woman's access to abortion within the confines of the Roe v. Wade decision. Many have been more aggressive, legally fighting against Roe by re-litigating similar cases, some of which have indeed weakened it’s precedent. 
+<p>The abortion debate has became a more prominent topic in the political debates of the last two decades leading to a distinct rise in restrictive laws. More laws relating to abortion restrictions have been passed between 2011 and 2013 than were passed between 2001-2010.<sup><a href="#citejump">[2]</a></sup>
+<p><div class = "letscenter"><img src="img/OverviewGraph.png"></div>
+<section id ="overview"></section>
+<!-- ==============================
+            GRADES 
+===================================-->
+<div class = "chptrhead"><h2>The Report Card</h2></div>
+<p>We present grades as devised by <a href="http://www.naral.org/" target="_blank">NARAL</a>, which are based on each states policies regarding a woman's choice and access to abortions. Most of the failing grades come from state's which boast one or more of the restrictive laws discussed here while an “A” grade required laws which instead protected or further ensured choice and access.  
+<p>We've taken the liberty of dropping the “+” and “-” from their grades for the sake of clarity. 
+<p><a href="http://www.prochoiceamerica.org/government-and-you/who-decides/methodology.html" target="_blank">More information on the methodology can be found at NARAL’s website.</a>
+<!-- ==============================
+            PROHIBITIONS 
+===================================-->
+<section id ="prohibition"></section>
+<div class = "chptrhead"><h2>Abortion Probition Laws</h2></div>
+<p>The first major blow to Roe v. Wade came in 1991 with the case of Planned Parenthood v. Casey, in which the US Supreme Court questioned whether Pennsylvania’s laws requiring informed consent, 24 hour waiting periods, and parental consent violated Roe v. Wade. Despite upholding Roe v. Wade, the court also affirmed all of Pennsylvania’s laws except for one, which required the father being informed.</p>
+<p> This decision set the new standard: Abortion regulation is fine, provided it doesn’t impose “undue burden” on a woman seeking abortion; undue burden defined as a “substantial obstacle in the path of a woman seeking an abortion before the fetus attains viability.”<sup><a href="#citejump">[3]</a></p>
+<p>From that vague decision all of the following restrictions became validated.</p>
+    <h2>Partial Birth</h2>
+<p>  In 2003, the U.S. Congress passed the Partial-Birth Abortion Ban Act, which was upheld by the Supreme Court in 2007. The law prohibits abortions via the “partial-birth abortion” procedure. Coined by the National Right to Life Committee in 1995, it originally referred to a specific type of abortion called the “intact dilation and evacuation".</p>
+<p>In the ruling, however, the term doesn't refer to any precise medical procedure, but rather any abortion where the doctor “deliberately and intentionally vaginally delivers a living fetus until, in the case of a head-first presentation, the entire head is outside the mother, or, in the case of breech presentation, any part of the fetal trunk past the navel is outside the body of the mother.”<sup><a href="#citejump">[4]</a></p></sup>
+<p>The issue here is that the ban completely disregards cases where the woman's health may be at risk. In cases where the fetus develops an illness undetectable until the second trimester, procedures banned by this law are widely considered the safest way to end the pregnancy without damaging the woman's cervix. The negligence of the law is addressed in 32 states with exceptions, but in 29 those exceptions are only made when the woman's life is in danger.<sup><a href="#citejump">[5]</a></p></sup>
+<!-- Trigger Laws-->
+<h2>Trigger laws</h2>
+<p>Due to Roe v. Wade, it is illegal for states to not provide abortions if the woman's life is endangered. However, many states still have laws which, while unenforceable, are still on the books from before 1973. Some states have even passed laws which won’t come into effect unless Roe v. Wade is overturned.<sup><a href="#citejump">[6]</a></sup></p>
+<p>These laws are nicknamed “Trigger Laws:” A law that is unenforceable at present, but may become relevant if a “trigger event”, in this case Roe being overturned, occurs. Because of this, the trigger laws can only themselves be overturned through the state legislature after going into effect.<sup><a href="#citejump">[7]</a></sup></p>
+<!-- ==============================
+            COUNSELING & CPC
+===================================-->
+<section id="counseling"></section>
+<p><div class = "chptrhead"><h2>Counseling</h2></div>
+<p>Terminating a pregnancy is a difficult choice. Counseling as an option to both inform and help a patient through such an emotional process is an invaluable asset that women considering an abortion should have access to. Mandated counseling goes beyond that, requiring doctors to present information designed to discourage a woman from seeking abortion.
+<p>The issue of mandated counseling is further exacerbated by the overwhelming presence of crisis pregnancy centers (CPC) in comparison to abortion providers. 
+CPCs provide useful services like free pregnancy tests, ultrasounds, diapers, parenting classes, and sometimes even housing, but also have a reputation for misinformation and are not medically licensed.<sup><a href="#citejump">[8]</a></sup></p>
+<p>They actively disseminate erroneous and/or false information to women seeking advice regarding pregnancy. These include dubious claims of links between abortion, breast cancer and female infertilitiy, that condoms are ineffective, that abortion pills are dangerous, that abortions lead to permanent psychological damage, that abortion is dangerous and could kill the patient, and many more unsatiated claims.<sup><a href="#citejump">[9]</a></sup></p>
+<p><div class = "letscenter"><img src="img/CPCMap.png"></div>
+<p>Despite that approach and their reputation, CPCs received $60 million of federal funding by 2006 and at present outnumber legitimate Abortion Clinics by about 700.<sup><a href="#citejump">[10]</a></sup> CPCs are eligible for the funding because their primary mission is to promote abstinence, though the link between women’s counseling, abstinence, and abortion are hard to deny. In multiple cases, CPCs set up signage or establishments near to Planned Parenthood that leaves off their affiliation, leading to confusion from women seeking accurate information.<sup><a href="#citejump">[11]</a></sup></p>
+<p>Whereas CPCs are directly assisted by state governments, Abortion Providers are subjected in 45 states by restrictions which are not imposed on other medical professionals. These are referred to as Targeted Regulation of Abortion Providers, or TRAP laws. Common TRAP laws require doctors to convert their practices to mini-hospitals at great expense, limit abortion care to hospitals or other specialized facilities or physicians offices, and/or require doctors to have admitting privileges at a local hospital with nothing requiring facilities to grant that privilege.<sup><a href="#citejump">[12]</a></sup></p>
+<p>As a result, in many states Abortion Providers can only exist in large cities, while CPCs thrive in the small towns and rural areas.</p>
+<p><div class = "letscenter"><img src="img/CPCLawChart.png"></div>
+<!-- ==============================
+            WAITING PERIOD 
+===================================-->
+<section id ="waiting"></section>
+<div class = "chptrhead"><h2>Waiting Period</h2></div>
+<p>In all states, before receiving an abortion, a woman needs to offer “informed” consent. This step involves being provided with the states considerd adequate information, and then in some states, a required waiting period of at least 18 hours between the counseling and the abortion.<sup><a href="#citejump">[13]</a></sup>
+<div class = "letscenter"><img src="img/VoronoiMap.png"></div>
+
+<p>There are no studies conclusively proving this waiting period helps with the decision, but there are multiple which point out the consequences of it. As you can see in the above map, most abortion clinics are located in major cities. One study cites an average travel distance of 42 miles necessary to travel, with the farthest being 400 miles.<sup><a href="#citejump">[14]</a></sup> When factoring in travel costs and stress of making the trip, intentionally or not, waiting period laws put an unnecessary burden on women in rural areas seeking abortions.
+
+<!-- ==============================
+            PARENTAL CONSENT 
+===================================-->
+<section id="consent"></section> 
+<div class = "chptrhead"><h2>Parental Consent</h2></div>
+<p>The majority of teenagers under the age of 18 who have abortions involve at least one parent. The teens who choose not to inform their parents generally have a good reason not to do so. In those cases, concerns include getting kicked out of the home, mistrust based on parents' previous actions, or abuse. While these may be rare cases, they've been shown to be legitimate.<sup><a href="#citejump">[15]</a></sup></p>
+<p>All states that mandate parental consent allow for exceptions from a judge or doctor, but finding them and obtaining their consent can be a very time consuming process in a very time-sensitive situation. There is no evidence that mandated consent has an influence on parental involvement.<sup><a href="#citejump">[16]</a></sup></p> 
+
+
+<!-- ==============================
+            ULTRASOUND 
+===================================-->
+<section id="ultrasound"></section> 
+<div class = "chptrhead"><h2>Ultrasound</h2></div>
+<p>The most recent type of state legislation introduced to restrict abortion are for mandatory ultrasounds. An ultrasound is a medical procedure that sends high frequency sound waves through a pregnant woman's body to create an image of the fetus inside.<sup><a href "#citejump">[17]</a></sup> For observations of the fetus's development, ultrasounds are great.
+<div class = "letscenter"><img src ="img/UltrasoundTimeline.png"></div>
+<p>Initially introduced in the late 1980’s, state legislation regarding ultrasounds has become more prevalent since 2004. These laws range from simply requiring doctors to inform a woman of the procedure, to requiring it to be offered, to mandatory prior to an abortion.
+<p>Ultrasounds are not a medically necessary component of a first-trimester abortion. When they become a requirement, adding another hurdle to the process. Further intrusive is the policy in Louisiana, Texas, and Virginia that require the ultrasound image to be shown and described ultrasound procedure. While patients are allowed to look away or close their eyes, depending on the circumstances of the abortion, it can be a <a href="http://www.texasobserver.org/we-have-no-choice-one-womans-ordeal-with-texas-new-sonogram-law/" target="_blank">emotionally painful experience</a>.</p>
+<p>Mandatory ultrasounds replace informed-consent with coersion. Not about the ultimate decision, but how a woman chooses to get there.<sup><a href="#citejump">[18]</a></sup>
+<!-- ==============================
+            MORE INFO 
+===================================-->
+<div class = "chptrhead"><h2>More Information</h2></div>
+<p>For more detailed information on state-level Abortion laws, we recommend:
+
+    <p><a href = "http://www.guttmacher.org" target="_blank">Guttmacher Institute</a>
+    <p><a href = "http://www.plannedparenthood.org/health-center" target="_blank">Planned Parenthood</a><section id="about"></section>
+
+    <p><a href = "http://www.naral.org" target="_blank">NARAL, Pro Choice America</a>
+    </div>
+</div>
+<!-- ===================================================
+ END OF ANALYSIS
+=================================================== -->
+<div class ="dwarf-butts">
+<div class="container">
+<div class ="page-header"><br><h1>About this Map</h1></div>
+<!--================================
+            DATA
+==================================-->
+<h3>Data</h3> <!-- add links --><p>
+Most of the locations of abortion providers in the U.S. are from <a href="http://www.plannedparenthood.org/health-center " target="_blank">Planned Parenthood</a> and the <a href="http://prochoice.org/think-youre-pregnant/find-a-provider/ " target="_blank">National Abortion Federation</a> (NAF). Only those Planned Parenthoods that offer abortion services were included in the map. These locations were cross-checked with NAF's data to ensure that there were no duplicates. A few abortion providers are from <a href="http://www.gynpages.com/ " target="_blank">GynPages</a> and <a href="http://www.abortionclinicpages.com/ " target="_blank">abortionclinicpages.com</a>. We know that this is not a comprehensive list of abortion providers in the U.S., as a report from the Guttmacher Institute found that there were an estimated 1,720 abortion providers in the U.S. in 2011 (as opposed to the 607 abortion providers included in our map). However, we could not compile a complete list, as the Guttmacher Institute does not release this information due to confidentiality agreements with many providers. We believe that much of the discrepancy between our number and the complete number is due to hospitals and private physicians' offices that do not belong to the National Abortion Federation. If you have any leads on where we can get a complete list of abortion providers, please <a href="mailto:yourbodynotyourchoice@gmail.com ">contact us</a>. 
+<br><br>
+The locations of crisis pregnancy centers (CPCs) come from <a href="http://birthright.org/" target="_blank">Birthright International</a> and <a href="http://www.heartbeatinternational.org/" target="_blank">Heartbeat International</a> networks. <a href="https://www.care-net.org/" target="_blank">Care-Net</a> also has an extensive network of CPCs but does not have a comprehensive list of their affiliates.
+</p>
+<p>This website is not intended to help women seeking an abortion find medical care. If you are a pregnant woman in need of medical attention or are seeking an abortion provider, please ask your doctor or go to <a href="http://www.plannedparenthood.org/health-center " target="_blank">Planned Parenthood's</a> or <a href="http://prochoice.org/think-youre-pregnant/find-a-provider/ " target="_blank">National Abortion Federation's</a> websites to look for your nearest abortion provider.</p>
+<p>The maps drawn are all projected in USA Contiguous Albers Equal Area Conic except for "Distance to nearest Abortion Provider" which is projected in USA Contiguous Equidistant Conic to preserve distance. 
+<!--=================================
+            AUTHORS
+===================================-->   
+<p><h3>Authors + Contact</h3>
+<p>Your Body, (Not) Your Choice is a collaboration project by <a href="http://twitter.com/katiekowalsky" target="_blank">Katie Kowalsky</a>, <a href="http://twitter.com/DylanMoriarty" target="_blank">Dylan Moriarty</a>, and <a href="http://twitter.com/tolomaps" target="_blank">Robin Tolochko</a> for Robert Roth and Carl Sack’s Interactive Cartography & Geovisualization course at UW-Madison. Completed in December 2014. 
+<br><br>
+Many thanks to Robert Roth, Carl Sack, Rashauna Mead, Sam Matthews, John Czaplewski, Brian Davidson, Garrick Jannene, Jerry Tolochko, and the UW-Cartography Lab for their invaluable help! This project was inspired by <a href="http://50yearsofchange.com/" target="_blank">50 Years of Change</a>, created by Rashauna Mead, Erin Hamilton, and Vanessa Knoppke-Wetzel.
+<br><br>
+    This project was built with <a href="http://d3js.org/ " target="_blank">D3</a>, <a href="https://github.com/mbostock/queue" target="_blank">Queue</a>, <a href="http://jquery.com/ " target="_blank">jQuery</a>, <a href="http://jchavannes.com/jquery-timer/demo" target="_blank">jQuery Timer</a> and <a href="http://getbootstrap.com/ " target="_blank">Bootstrap</a>.
+<br><br>
+If you find any errors in our data or just have general feedback, please <a href="mailto:yourbodynotyourchoice@gmail.com ">contact us</a>.  
+<h3>Process</h3><p>
+All of the code for this project is available on GitHub, <a href="https://github.com/kkowalsky/yourbodynotyourchoice" target="_blank">here</a>. 
+<br>
+You can read about our processes on our various blog posts: <!-- add links --> <a href="http://www.eatincake.com/" target="_blank">Dylan</a>, <a href="http://www.kowalskycartography.wordpress.com/tag/575-final-project/" target="_blank">Katie</a>, and <a href="http://www.tolomaps.tumblr.com/tagged/yourbodynotyourchoice" target="_blank">Robin</a>.
+</p><section id= "citejump"></section>
+
+ <p><h3>Citations</h3><div id = "cite">
+<p>1. <a href="http://www.oyez.org/cases/1970-1979/1971/1971_70_18" target="_blank">The OYEZ Project, "ROE v. Wade"</a></p>
+<p>2. <a href="http://www.guttmacher.org/pubs/gpr/17/1/gpr170109.html" target="_blank">Guttmacher Institute, "A Surge of State Abortion Restrictions Puts Providers- and the Women They Serve- in the crosshairs"</a></p>
+<p>3. <a href="http://www.oyez.org/cases/1990-1999/1991/1991_91_744" target="_blank">The OYEZ Project, "Planned Parenthood v. Casey"</a></p>
+<p>4. <a href="http://www.gpo.gov/fdsys/pkg/BILLS-108s3enr/pdf/BILLS-108s3enr.pdf" target="_blank">The Partial-Birth Abortion Ban Act of 2003</a></p>
+<p>5. <a href="http://www.guttmacher.org/statecenter/spibs/spib_BPBA.pdf" target="_blank">Guttmacher Institute, "State Policies in Brief: Bans on 'Partial-Birth' Abortion"</a></p>
+<p>6. <a href="http://www.lifenews.com/2007/03/22/state-2183/" target="_blank">LifeNews, "Mississippi Gov Barbour Signs Abortion Trigger Law, Ultrasound Requirement"</a></p>
+<p>7. <a href="http://www.washingtonpost.com/wp-dyn/content/article/2008/09/26/AR2008092602833.html" target="_blank">The Washington Post, "If Roe Goes, Our State Will Be Worse Than You Think"</a>
+<p>8. <a href="http://www.plannedparenthood.org/health-info/pregnancy/crisis-pregnancy-centers" target="_blank">Planned Parenthood, "Crisis Pregnancy Centers"</a></p>
+<p>9. <a href="http://www.naralva.org/what-is-choice/cpc/common-lies.shtml" target="_blank">NARALVA, "Common Lies Told by Crisis Pregnancy Centers"</a></p>
+<p>10. <a href="http://www.washingtonpost.com/wp-dyn/content/article/2006/03/21/AR2006032101723_pf.html" target="_blank">The Washington Post, "Grants Flow to Bush Allies on Social Issues"</a></p>
+<p>11. <a href="http://www.nytimes.com/2013/01/05/health/pregnancy-centers-gain-influence-in-anti-abortion-fight.html?pagewanted=all" target="_blank">The New York Times, "Pregnancy Centers Gain Influence in Anti-Abortion Arena"</a></p>
+<p>12. <a href="http://www.prochoiceamerica.org/what-is-choice/fast-facts/issues-trap.html" target="_blank">NARAL, "Targeted Regulation of Abortion Providers"</a></p>
+<p>13. <a href="http://www.guttmacher.org/statecenter/spibs/spib_MWPA.pdf" target="_blank">Guttmacher Institute, "State Policies in Brief: Counseling and Waiting Periods for Abortion"</a></p>
+<p>14. <a href="http://www.utexas.edu/cola/orgs/txpep/_files/pdf/TxPEP-ResearchBrief-ImpactofAbortionRestrictions.pdf" target="_blank">The Texas Policy Evaluation Project, Impact of Abortion Restriction in Texas Research Brief</a></p>
+<p>15. <a href="https://www.aclu.org/reproductive-freedom/laws-restricting-teenagers-access-abortion" target="_blank">ACLU, "Laws Restricting Teenagers' Access to Abortion"</a></p>
+<p>16. <a href="http://www.prochoiceamerica.org/media/fact-sheets/abortion-young-women-parental-involvement.pdf" target="_blank">NARAL, "Mandatory Parental-Invovlement Laws Threaten Young Women's Safety"</a></p>
+<p>17. <a href="http://www.healthline.com/health/ultrasound#Definition1" target="_blank">Healthline, "What is an Ultrasound?"</a></p>
+<p>18. <a href="http://www.heinonline.org/HOL/Page?public=false&handle=hein.journals/uclalr56&men_hide=false&men_tab=citnav&collection=journals&page=351" target="_blank">"Seeing and Believing: Mandatory Ultrasound and the Path to a Protected Choice", Carol Sanger.</a></p>
+</div>
+</div></div><!-- end about -->
+    
+    <div id="footerwrap" style="background-color: #986cb3">
+		<div class="container">
+			<div class="row centered">
+                <div id ="footer">
+                    <center>
+					<h5 style="color: #fff">Your Body, (Not) Your Choice &copy; 2014</h5>
+                    </center>
+                </div>
+			</div>
+		</div>
+	</div><! --/footerwrap -->  
+      
+      <!--libraries-->
+        <script src="lib/d3.min.js"></script>
+        <script src="lib/queue.js"></script>
+        <script src="lib/topojson.v1.min.js"></script>
+        <script src="lib/jquery-2.1.1.min.js"></script>
+        <script src="lib/jquery.timer.js"></script>
+        <script src="lib/bootstrap.js"></script>
+  
+        
+        <!--link to main Javascript file-->
+        <script src="js/main.js"></script>      
+    </body>
+</html>

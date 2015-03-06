@@ -1,0 +1,494 @@
+/*  navbar CSS */
+/*  ------ */
+#custom-bootstrap-menu.navbar-custom .navbar-brand {
+    color: #248271;
+}
+#custom-bootstrap-menu.navbar-custom {
+    font-size: 16px;
+    background-color: rgba(225, 225, 225, 1);
+    border-style: solid;
+    border-color: #CCCCCC;
+    border-bottom-width: 2px;
+    font-family: Open Sans, sans-serif;
+}
+#custom-bootstrap-menu.navbar-custom .navbar-nav>li>a {
+    color: rgba(119, 119, 119, 1);
+    background-color: rgba(225, 225, 225, 1);
+}
+#custom-bootstrap-menu.navbar-custom .navbar-nav>li>a:hover,
+#custom-bootstrap-menu.navbar-custom .navbar-nav>li>a:focus {
+    color: rgba(255, 255, 255, 1);
+    background-color: #fa6e39;
+}
+#custom-bootstrap-menu.navbar-custom .navbar-nav>.active>a,
+#custom-bootstrap-menu.navbar-custom .navbar-nav>.active>a:hover,
+#custom-bootstrap-menu.navbar-custom .navbar-nav>.active>a:focus {
+    color: #fa6e39;
+    background-color: rgba(204, 204, 204, 1);
+}
+#custom-bootstrap-menu.navbar-custom .navbar-toggle {
+    border-color: #cccccc;
+}
+#custom-bootstrap-menu.navbar-custom .navbar-toggle:hover,
+#custom-bootstrap-menu.navbar-custom .navbar-toggle:focus {
+    background-color: #cccccc;
+}
+#custom-bootstrap-menu.navbar-custom .navbar-toggle .icon-bar {
+    background-color: #cccccc;
+}
+#custom-bootstrap-menu.navbar-custom .navbar-toggle:hover .icon-bar,
+#custom-bootstrap-menu.navbar-custom .navbar-toggle:focus .icon-bar {
+    background-color: #e1e1e1;
+}
+
+.jumbotron {
+    padding: 20px;
+    padding-left: 60px;
+    padding-right: 60px;
+    color: #f9f9f9; 
+    background-color:  #986cb3;
+}
+
+.image2 {
+    float: right;
+    margin: 10px;
+}
+
+.paragraph2 {
+    text-align: right;
+}
+
+.image3 {
+    float: left;
+    margin: 10px;
+}
+
+.page-header {
+    margin-top: 0px;
+}
+
+
+/*  Menu CSS */
+/*  ------ */
+.main-menu { 
+    position: absolute;
+    margin-left: 0% !important;
+    color: #969696;
+}
+
+.menu-options {
+    float: left;
+    background-color:  #e1e1e1;
+    cursor: pointer;
+    font-family: Open Sans, sans-serif;
+}
+
+.menu-inset {
+    float: right;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #CCCCCC;
+}
+
+.Overview {
+    text-align: center;
+    padding: 13%;
+}
+
+.Overview:hover {
+    color: #333333;
+    background-color: #CCCCCC;
+}
+
+.Prohibited {
+    text-align: center;
+    padding: 13%;
+}
+
+.Prohibited:hover {
+    color: #333333;
+    background-color: #CCCCCC;
+}
+
+.Counseling {
+    text-align: center;
+    padding: 8%;
+}
+
+.Counseling:hover {
+    color: #333333;
+    background-color: #CCCCCC;
+}
+
+.Waiting {
+    text-align: center;
+    padding: 8%;
+}
+
+.Waiting:hover {
+    color: #333333;
+    background-color: #CCCCCC;
+}
+
+.Parental {
+    text-align: center;
+    padding: 8%;
+}
+
+.Parental:hover {
+    color: #333333;
+    background-color: #CCCCCC;
+}
+
+.Ultrasound {
+    text-align: center;
+    padding: 8%;
+}
+
+.Ultrasound:hover {
+    color: #333333;
+    background-color: #CCCCCC;
+}
+
+.overlay-menu {
+    margin-top: 325px;
+    font-size: 12px;
+    font-family: Open Sans, sans-serif;
+    cursor: pointer;
+}
+
+.cpc {
+    float: left;
+    background-color: rgba(250, 110, 57, 1);
+    color: #fff;
+    text-align: center;
+    padding: 1.5%;
+}
+
+.cpc:hover {
+    color: #fff;
+    background-color: #f95618;
+}
+
+#cpc-inset {
+    float: right;
+    background-color: #fff;
+    visibility: hidden;
+}
+
+.abortion {
+    float: left;
+    color: #fff;
+    background-color:  rgba(55, 196, 171, 1);
+    text-align: center;
+    padding: 3%;
+}
+
+.abortion:hover {
+    color:  #fff;
+    background-color: #248271;
+}
+
+#abortion-inset {
+    float: right;
+    background-color: #fff;
+    visibility: hidden;
+}
+
+.title {
+    font-family: 'Roboto Slab', sans-serif;
+}
+
+/*  Map Info CSS (includes section info, play, pause, dropdown) */
+/*  ------ */
+.menuInfoBox {
+    margin-left: 29%;
+    font-size: 14px;
+    font-family: Open Sans, sans-serif;
+}
+
+.textBox {
+    width: 50%;
+    float: left;
+    padding-bottom: 2%;
+}
+
+.yearExpressedText {
+    float: right; 
+    padding-right: 115px;
+    font-family: 'Roboto Slab', sans-serif;
+}
+
+.cpcMenuInfoBox{
+    font-size: 14px;
+    font-family: Open Sans, sans-serif;
+    margin-left: 5px !important;
+    width: 275px;
+    float: left;
+    position: absolute;
+}
+
+.abortionMenuInfoBox{
+    margin-top: 5.5%;
+    font-size: 14px;
+    font-family: Open Sans, sans-serif;
+    margin-left: 5px !important;
+    width: 275px;
+    float: left;
+    position: absolute;
+}
+
+.sequence-buttons {
+
+}
+
+.button {
+    padding-right: 15%;
+    display: inline-flex;
+    float: right;
+}
+.dropdown {
+    margin-top: 6%;
+}
+
+/*  Map CSS */
+/*  ------ */
+
+.map {
+    background-color: #fff;
+    margin-left: 26%;
+    padding-left: 3%;
+}
+
+.states {
+    fill: #808080;
+    stroke: #fff;
+    stroke-width: 0.5px;
+    float:left;
+}
+
+.cpcLocations {
+	fill: #FA6E39;
+	fill-opacity:0.7;
+}
+
+.abortionLocations {
+    fill: #37C4AB;
+	fill-opacity:0.7;
+}
+
+/* Labels CSS  */
+/* ---------  */
+
+.infoLabel {
+    position: absolute;
+    height: auto;
+    /*border: solid thin #fff;*/
+    padding: 10px;
+    float:right;
+    display:inline-block;
+    margin-right:-200px;
+}
+
+.labelTitle {
+   position: absolute;
+   font-family: 'Roboto Slab', serif;
+   font-weight:bold;
+   font-size:20px;
+   line-height:24px;
+   background-color: #525252;
+   color:#fff;
+   z-index: 2;
+   width:200px;
+   padding:10px;
+   margin-top: -240px;
+   margin-left:660px;
+}
+
+.labelAttribute {
+    font-family: 'Open Sans', sans-serif;
+    font-size:16px;
+    font-weight:normal;
+    line-height: 20px;
+}
+
+/* Graph CSS  */
+/* ---------  */
+
+.graph {
+}
+
+/* .chart is the SVG of the chart itself */
+.chart {
+    background-color: #00C6FF;
+    background-color: #fff;
+    margin-left: 26%;
+}
+
+.axis {
+    background-color: #000;
+}
+
+.timeline {
+    position:absolute;
+    font-family: 'Open Sans', sans-serif;
+    font-size:12px;
+/*    font-weight: bold;*/
+    fill: none;
+    stroke: gray;
+    shape-rendering: crispEdges;
+}
+
+.timeline path,
+.timeline line {
+    fill: none;
+    stroke: black;
+    shape-rendering: crispEdges;
+}
+
+/* Jumps CSS  */
+/* ------------  */
+#map{
+}
+
+#overview{
+    padding-top:70px;
+}
+
+#prohibition{
+    padding-top: 36px;
+}
+
+#counseling{
+    padding-top: 36px;
+}
+
+#waiting{
+    padding-top: 36px;
+}
+
+#consent{
+    padding-top: 36px;
+}
+
+#ultrasound{
+    padding-top: 36px;
+}
+
+#CPC{
+    padding-top: 36px;
+}
+
+/* Analysis CSS  */
+/* ------------  */
+
+#analysis {
+    padding-top:0px;
+}
+
+.analysis{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#AnalysisBox{
+    position: relative;
+    left: 20%;
+    width: 60%;
+}
+
+.letscenter{
+    text-align: center;
+    margin-top: 12px;
+    margin-bottom: 24px;
+    position: relative;
+    right: 50px;
+}
+
+.chptrhead{
+    position: relative;
+    left: -30px;
+}
+
+.chptrhead h2{
+    color: white;
+    background-color: #525252;
+    position: relative;
+    padding: 6px;
+    margin-bottom: 24px;
+}
+
+#cite p{
+    font-size: 10px;
+}
+
+/* About CSS  */
+/* ---------  */
+.about {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.dwarf-butts {
+    padding-bottom: 1%;
+}
+
+/* HTML General CSS  */
+/* ----------------  */
+
+::selection {
+    background-color: #f95618; 
+    color: #fff;
+}
+::-moz-selection {
+    background-color: #f95618; 
+    color: #fff;
+}
+
+p {
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+    font-size: 36px;
+    font-family: 'Roboto Slab', serif;
+}
+
+h2 {
+    
+    font-family: 'Roboto Slab', serif;
+}
+
+h3 {
+    font-family: 'Roboto Slab', serif;
+}
+
+body { 
+    padding-top: 50px; 
+}
+
+.dwarf-butts p {
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+a:link {
+    color: #37c4ab;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #37c4ab;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #248271;
+    text-decoration: underline;
+}
+
+a:active {
+    color: #37c4ab;
+    text-decoration: none;
+}
