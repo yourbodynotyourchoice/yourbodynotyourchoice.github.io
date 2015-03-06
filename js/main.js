@@ -155,15 +155,15 @@ function setMap(){
         .projection(projection);
     
     queue()
-        .defer(d3.csv, "data/grades.csv")
-        .defer(d3.csv, "data/prohibitedAfter.csv")
-        .defer(d3.csv, "data/counseling.csv")
-        .defer(d3.csv, "data/waitingPeriod.csv")
-        .defer(d3.csv, "data/consent.csv")
-        .defer(d3.csv, "data/ultrasound.csv")
-        .defer(d3.json, "data/usa.topojson")
-        .defer(d3.json, "data/CPCs.geojson")
-        .defer(d3.json, "data/AbortionProviders.geojson")
+        .defer(d3.csv, "./data/grades.csv")
+        .defer(d3.csv, "./data/prohibitedAfter.csv")
+        .defer(d3.csv, "./data/counseling.csv")
+        .defer(d3.csv, "./data/waitingPeriod.csv")
+        .defer(d3.csv, "./data/consent.csv")
+        .defer(d3.csv, "./data/ultrasound.csv")
+        .defer(d3.json, "./data/usa.topojson")
+        .defer(d3.json, "./data/CPCs.geojson")
+        .defer(d3.json, "./data/AbortionProviders.geojson")
         .await(callback);
     
     //creates menu [overview starts on load]
