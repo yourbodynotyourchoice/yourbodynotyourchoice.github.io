@@ -162,7 +162,7 @@ function setMap(){
         .defer(d3.csv, "data/consent.csv")
         .defer(d3.csv, "data/ultrasound.csv")
         .defer(d3.json, "data/usa.topojson")
-        .defer(d3.json, "data/CPCS.geojson")
+        .defer(d3.json, "data/CPCs.geojson")
         .defer(d3.json, "data/AbortionProviders.geojson")
         .await(callback);
     
