@@ -54,13 +54,6 @@ class Map extends React.Component {
     this.map.scrollZoom.disable()
     this.map.touchZoomRotate.disableRotation()
 
-    this.updatePopup()
-
-    this.map.on('load', () => {
-    })
-  }
-
-  updatePopup (descrip) {
     var self = this
     var descriptions
 
@@ -68,6 +61,30 @@ class Map extends React.Component {
       closeButton: false,
       closeOnClick: false
     })
+
+    this.map.on('mousemove', function (e) {
+      var features = self.map.queryRenderedFeatures(e.point, { layers: ['usa'] })
+      self.map.getCanvas().style.cursor = (features.length) ? 'pointer' : ''
+
+      if (!features.length) {
+        popup.remove()
+        return
+      }
+
+      popup.setLngLat(e.lngLat)
+        .setHTML('mooo')
+        .addTo(self.map)
+    })
+
+    this.updatePopup(popup, makeDescriptions(this.state.view))
+
+    this.map.on('load', () => {
+    })
+  }
+
+  updatePopup (popup, descrip) {
+    var self = this
+    var descriptions
 
     this.map.on('mousemove', function (e) {
       var features = self.map.queryRenderedFeatures(e.point, { layers: ['usa'] })
@@ -86,10 +103,7 @@ class Map extends React.Component {
 
       var description = '<div><p>' + feature.properties.name + '</p><p>' + descriptions + '</div>'
 
-      popup.setLngLat(e.lngLat)
-        .remove(self.map)
-        .setHTML(description)
-        .addTo(self.map)
+      popup.setLngLat(e.lngLat).setHTML(description)
     })
   }
 
@@ -98,7 +112,14 @@ class Map extends React.Component {
       var colorScale = makeColorScale(next.view)
       var descrScale = makeDescriptions(next.view)
 
-      this.updatePopup(descrScale)
+      console.log(descrScale)
+
+      var popup = new mapboxgl.Popup({
+        closeButton: false,
+        closeOnClick: false
+      })
+
+      this.updatePopup(popup, descrScale)
 
       this.map.removeLayer('usa')
       this.map.addLayer({
