@@ -1,0 +1,67 @@
+/* ==========================================================================
+   Variables
+   ========================================================================== */
+
+/* Colors
+   ========================================================================== */
+$base-color: #000;                                   // Color name (Dark blue)
+$primary-color: #986cb3;                                // Color name (Brown)
+$secondary-color: rgba(250, 110, 57, 1);                              // Color name (Blue)
+$tiertiary-color: rgba(55, 196, 171, 1);
+$button-color: #eee;
+/* Helper colors */
+
+$base-alpha-color: rgba($base-color, 0.12);
+$base-semi-alpha-color: rgba($base-color, 0.08);
+$positive-color: #57b27c;
+
+/* Text Colors */
+
+
+/* Typography
+   ========================================================================== */
+
+$root-font-size: 16px;
+
+$base-font-color: tint($base-color, 24%);
+$base-font-family: "Hind", "Open-sans", Arial, sans-serif;
+$base-font-style: normal;
+$base-font-light: 100;
+$base-font-regular: 200;
+$base-font-bold: 600;
+$base-font-weight: $base-font-regular;
+$base-font-size: 1rem;
+$base-line-height: 1.5;
+
+$code-font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+
+
+/* Decoration
+   ========================================================================== */
+
+/* Border radius */
+
+$base-border-radius: 0.3rem;
+$full-border-radius: 60rem;
+
+
+/* Sizing, spacing and media queries
+   ========================================================================== */
+
+/* Sizing */
+
+$page-header-y: 3em;
+
+/* Spacing */
+
+$global-spacing: 1rem;
+
+/* Media queries */
+
+$xsmall-range: (0, 543px);
+$small-range: (544px, 767px);
+$medium-range: (768px, 991px);
+$large-range: (992px, 1199px);
+$xlarge-range: (1200px);
+
+$screen: "only screen";
