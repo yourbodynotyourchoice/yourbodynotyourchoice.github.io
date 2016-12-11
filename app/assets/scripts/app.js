@@ -1,5 +1,6 @@
 'use strict'
 import React from 'react'
+import c from 'classnames'
 import Header from './components/header'
 import Map from './components/map'
 import Legend from './components/legend'
@@ -59,19 +60,19 @@ class MainContent extends React.Component {
         <p className='welcome__text'>Since the landmark Supreme Court decision Roe v. Wade in 1973, which legalized abortion throughout in the U.S., states across the country have slowly chipped away at this federally protected right. We are here to tell this story.</p>
       </div>
 
+      <div className='sidebar__back'>
+      </div>
       <section className='sidebar'>
         <ul>
-          <Link to='/overview' activeStyle={{ color: 'red' }}><li className='sidebar__option' onClick={this.setView} >Overall Score</li></Link>
-          <Link to='/prohibit' activeStyle={{ color: 'red' }}><li className='sidebar__option' onClick={this.setView2} >Prohibited At</li></Link>
-          <Link to='/consoluing' activeStyle={{ color: 'red' }}><li className='sidebar__option' onClick={this.setView3} >Mandated Consoluing</li></Link>
-          <Link to='/waiting' activeStyle={{ color: 'red' }}><li className='sidebar__option' onClick={this.setView4} >Waiting Period</li></Link>
-          <Link to='/parent' activeStyle={{ color: 'red' }}><li className='sidebar__option' onClick={this.setView5} >Parental Consent</li></Link>
-          <Link to='/ultra' activeStyle={{ color: 'red' }}><li className='sidebar__option' onClick={this.setView6} >Mandatory Ultrasound</li></Link>
-          <Link to='/crisis' activeStyle={{ color: 'red' }}><li className='sidebar__option' onClick={this.setView7} >Crisis Pregnancy Centers</li></Link>
+          <Link to='/overview' activeStyle={{ 'color': 'red' }}><li className={c('sidebar__option', {'sidebar__option--active': this.state.view === 'overview'})} onClick={this.setView} >Overall Score</li></Link>
+          <Link to='/prohibit' activeStyle={{ 'color': 'red' }}><li className={c('sidebar__option', {'sidebar__option--active': this.state.view === 'prohibit'})} onClick={this.setView2} >Prohibited At</li></Link>
+          <Link to='/consoluing' activeStyle={{ 'color': 'red' }}><li className={c('sidebar__option', {'sidebar__option--active': this.state.view === 'consoluing'})} onClick={this.setView3} >Mandated Consoluing</li></Link>
+          <Link to='/waiting' activeStyle={{ 'color': 'red' }}><li className={c('sidebar__option', {'sidebar__option--active': this.state.view === 'waiting'})} onClick={this.setView4} >Waiting Period</li></Link>
+          <Link to='/parent' activeStyle={{ color: 'red' }}><li className={c('sidebar__option', {'sidebar__option--active': this.state.view === 'parent'})} onClick={this.setView5} >Parental Consent</li></Link>
+          <Link to='/ultra' activeStyle={{ color: 'red' }}><li className={c('sidebar__option', {'sidebar__option--active': this.state.view === 'ultra'})} onClick={this.setView6} >Mandatory Ultrasound</li></Link>
+          <Link to='/crisis' activeStyle={{ color: 'red' }}><li className={c('sidebar__option', {'sidebar__option--active': this.state.view === 'crisis'})} onClick={this.setView7} >Crisis Pregnancy Centers</li></Link>
         </ul>
       </section>
-
-      <div>{this.state.view}</div>
 
       <section className='Map-content'>
         <Map view={this.state.view} />

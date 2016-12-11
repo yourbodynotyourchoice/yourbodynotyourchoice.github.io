@@ -5,7 +5,7 @@ class Crisis extends React.Component {
   render () {
     return (
       <div className='analaysis__content'>
-        Crisis Pregancy Centers are Awful
+        <h2>Crisis Pregancy Centers</h2>
       </div>
     )
   }

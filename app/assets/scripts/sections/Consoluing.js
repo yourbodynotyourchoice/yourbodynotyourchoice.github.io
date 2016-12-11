@@ -5,7 +5,7 @@ class Consoluing extends React.Component {
   render () {
     return (
       <div className='analaysis__content'>
-				<h2>Counseling</h2>
+				<h2>Mandated Counseling</h2>
 
 				<p>Terminating a pregnancy is a difficult choice. Counseling as an option to both inform and help a patient through such an emotional process is an invaluable asset that women considering an abortion should have access to. Mandated counseling goes beyond that, requiring doctors to present information designed to discourage a woman from seeking abortion.</p>
 

@@ -6,6 +6,8 @@ class Prohibit extends React.Component {
   render () {
     return (
       <div className='analaysis__content'>
+      	<h2>Prohibition based Laws</h2>
+
 				<p>The first major blow to Roe v. Wade came in 1991 with the case of Planned Parenthood v. Casey, in which the US Supreme Court questioned whether Pennsylvania’s laws requiring informed consent, 24 hour waiting periods, and parental consent violated Roe v. Wade. Despite upholding Roe v. Wade, the court also affirmed all of Pennsylvania’s laws except for one, which required the father being informed.</p>
 
 				<p>This decision set the new standard: Abortion regulation is fine, provided it doesn’t impose “undue burden” on a woman seeking abortion; undue burden defined as a “substantial obstacle in the path of a woman seeking an abortion before the fetus attains viability.”[3]</p>

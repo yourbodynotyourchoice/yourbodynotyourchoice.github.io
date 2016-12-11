@@ -58,10 +58,25 @@ h1 {
   width: 14rem;
 }
 
+.sidebar__back {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 14rem;
+  height: 12rem;
+  background-color: #aaa;
+  z-index: -1;
+}
+
 .sidebar__option {
   background-color: #ddd;
   padding: 1rem;
   border: 1px solid #ccc;
+}
+
+.sidebar__option--active {
+  border-color: #aaa;
+  background-color: #ccc;
 }
 
 .Map-content {
