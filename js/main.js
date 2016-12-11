@@ -1,6 +1,6 @@
 /****** GLOBAL VARIABLES *******/
 var mapWidth = 750, mapHeight = 410;
-var keyArray = ["1973", "1974", "1975", "1976", "1977", "1978", "1979", "1980", "1981", "1982", "1983", "1984", "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014"];
+var keyArray = ["1973", "1974", "1975", "1976", "1977", "1978", "1979", "1980", "1981", "1982", "1983", "1984", "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016"];
 var Category = ["gradeData", "prohibitedAfter", "counseling", "waitingPeriod", "consentData", "ultrasound"];
 var expressed;
 var yearExpressed;
@@ -19,41 +19,41 @@ var joinedJson; //Variable to store the USA json combined with all attribute dat
 
 // SET UP ARRAYS FOR CATEGORIES OF EACH VARIABLE
     //Variable array for Overview
-    var arrayOverview = [  "F",       
-                        "D",       
-                        "C",          
-                        "B",          
-                        "A"   ];     
+    var arrayOverview = [  "F",
+                        "D",
+                        "C",
+                        "B",
+                        "A"   ];
 
     //Variable array for Prohibited At
-    var arrayProhibited = [ "12 weeks",     
-                        "20 weeks",      
-                        "22 weeks",      
-                        "24 weeks",      
-                        "3rd trimester",      
-                        "Viability"   ]; 
+    var arrayProhibited = [ "12 weeks",
+                        "20 weeks",
+                        "22 weeks",
+                        "24 weeks",
+                        "3rd trimester",
+                        "Viability"   ];
 
     //Variable array for Mandated Counseling
-    var arrayCounseling = [ "Yes",     
-                        "No"   ];  
+    var arrayCounseling = [ "Yes",
+                        "No"   ];
 
     //Variable array for Waiting Period
-    var arrayWaitingPeriod = [  "72 hours",     
-                            "48 hours",      
-                            "24 hours",      
-                            "18 hours",     
-                            "None"   ];  
+    var arrayWaitingPeriod = [  "72 hours",
+                            "48 hours",
+                            "24 hours",
+                            "18 hours",
+                            "None"   ];
 
     //Variable array for Parental Consent
-    var arrayConsent = [    "consent",    
-                            "notice",      
-                            "none"   ];  
+    var arrayConsent = [    "consent",
+                            "notice",
+                            "none"   ];
 
     //Variable array for Ultrasound
-    var arrayUltrasound = ["Must be performed",      
-                        "Must be offered",      
-                        "Must be informed",      
-                        "none"   ];  
+    var arrayUltrasound = ["Must be performed",
+                        "Must be offered",
+                        "Must be informed",
+                        "none"   ];
 
 //SET UP COLOR ARRAYS FOR EACH VARIABLE
     //Color array for Overview & Waiting Period
@@ -144,16 +144,16 @@ function setMap(){
         .attr("width", mapWidth)
         .attr("height", mapHeight)
         .attr("class", "us-map");
-    
+
     //Create a Albers equal area conic projection
     var projection = d3.geo.albersUsa()
         .scale(900)
         .translate([mapWidth / 2, mapHeight / 2]);
-    
+
     //create svg path generator using the projection
     var path = d3.geo.path()
         .projection(projection);
-    
+
     queue()
         .defer(d3.csv, "../data/grades.csv")
         .defer(d3.csv, "../data/prohibitedAfter.csv")
@@ -165,10 +165,10 @@ function setMap(){
         .defer(d3.json, "../data/CPCs.geojson")
         .defer(d3.json, "../data/AbortionProviders.geojson")
         .await(callback);
-    
+
     //creates menu [overview starts on load]
     drawMenu();
-        
+
     //retrieve and process json file and data
     function callback(error, grade, prohibitedAfter, counseling, waitingPeriod, consent, ultrasound, usa, cpc, abortionprovider){
 
@@ -211,7 +211,7 @@ function setMap(){
                     break;
                     };
                 };
-             }; 
+             };
         }; //END linkData
 
         //Style the states to be styled according to the data
@@ -219,7 +219,7 @@ function setMap(){
             .data(joinedJson)
             .enter()
             .append("path")
-            .attr("class", function(d){ 
+            .attr("class", function(d){
                 return "states " + d.properties.postal;
             })
             .style("fill", function(d){
@@ -242,7 +242,7 @@ function setMap(){
             var cpc_count = cpc.features[a].properties.Count;
             cpcCount.push(Number(cpc_count));
         }
-        
+
         //creates min and max of cpcs
         var cpcMin = Math.min.apply(Math, cpcCount);
         var cpcMax = Math.max.apply(Math, cpcCount);
@@ -251,19 +251,19 @@ function setMap(){
         var cpcRadius = d3.scale.sqrt()
             .domain([cpcMin, cpcMax])
             .range([2, 20]);
-        
+
         //for abortion provider
         var abortionCount = [];
         for (var b = 0; b < abortionprovider.features.length; b++){
             var abortion_count = abortionprovider.features[b].properties.Count;
             abortionCount.push(Number(abortion_count));
         }
-        
+
         //creates min and max of abortion providers
         var abortionMin = Math.min.apply(Math, abortionCount);
         var abortionMax = Math.max.apply(Math, abortionCount);
-        
-        //creates radius 
+
+        //creates radius
         var abortionRadius = d3.scale.sqrt()
             .domain([abortionMin, abortionMax])
             .range([2, 23]);
@@ -276,7 +276,7 @@ function setMap(){
 //menu items function
 function drawMenu(){
     //click changes on Overview
-    $(".Overview").click(function(){ 
+    $(".Overview").click(function(){
         expressed = Category[0];
         yearExpressed = keyArray[keyArray.length-1];
         d3.selectAll(".yearExpressedText").remove();
@@ -299,9 +299,9 @@ function drawMenu(){
         var oldChart = d3.selectAll(".chart").remove();
         var oldRects = d3.selectAll(".chartRect").remove();
     });
-    
+
     //click changes for Prohibited At
-     $(".Prohibited").click(function(){ 
+     $(".Prohibited").click(function(){
         expressed = Category[1];
         $('.stepBackward').prop('disabled', false);
         $('.play').prop('disabled', false);
@@ -322,9 +322,9 @@ function drawMenu(){
         var oldRects = d3.selectAll(".chartRect").remove();
         setChart(yearExpressed);
      });
-    
+
     //click changes for mandated counseling
-    $(".Counseling").click(function(){  
+    $(".Counseling").click(function(){
         expressed = Category[2];
         $('.stepBackward').prop('disabled', false);
         $('.play').prop('disabled', false);
@@ -345,9 +345,9 @@ function drawMenu(){
         var oldRects = d3.selectAll(".chartRect").remove();
         setChart(yearExpressed);
         });
-    
+
     //click changes for waiting period
-    $(".Waiting").click(function(){ 
+    $(".Waiting").click(function(){
         expressed = Category[3];
         $('.stepBackward').prop('disabled', false);
         $('.play').prop('disabled', false);
@@ -368,9 +368,9 @@ function drawMenu(){
         var oldRects = d3.selectAll(".chartRect").remove();
         setChart(yearExpressed);
         });
-    
+
     //click changes for parental consent
-    $(".Parental").click(function(){  
+    $(".Parental").click(function(){
         expressed = Category[4];
          $('.stepBackward').prop('disabled', false);
          $('.play').prop('disabled', false);
@@ -391,7 +391,7 @@ function drawMenu(){
         var oldRects = d3.selectAll(".chartRect").remove();
         setChart(yearExpressed);
 });
-    
+
     //click changes for mandatory ultrasound
     $(".Ultrasound").click(function(){
         expressed = Category[5];
@@ -425,7 +425,7 @@ function drawMenuInfo(colorize, yearExpressed){
         .attr("y", 0)
         .attr("class", "yearExpressedText menu-info")
         .text(yearExpressed)
-        .style({'font-size':'36px', 'font-weight': 'strong'}); 
+        .style({'font-size':'36px', 'font-weight': 'strong'});
 }; //End DrawMenuInfo
 
 //vcr controls click events
@@ -438,7 +438,7 @@ function animateMap(yearExpressed, colorize, yearExpressedText){
         } else {
             yearExpressed = keyArray[keyArray.length-1];
             changeAttribute(yearExpressed, colorize);
-        }; 
+        };
     });
     //play functionality
     $(".play").click(function(){
@@ -459,7 +459,7 @@ function animateMap(yearExpressed, colorize, yearExpressedText){
         } else {
             yearExpressed = keyArray[0];
             changeAttribute(yearExpressed, colorize);
-        }; 
+        };
     });
 }; //end AnimateMAP
 
@@ -467,14 +467,14 @@ function animateMap(yearExpressed, colorize, yearExpressedText){
 function timeMapSequence(yearsExpressed) {
     changeAttribute(yearExpressed, colorize);
     if (yearsExpressed < keyArray[keyArray.length-1]){
-        yearExpressed++; 
+        yearExpressed++;
     };
 }; //end timeMapSequence
 
 //changes year displayed on map
 function changeAttribute(year, colorize){
     var removeOldYear = d3.selectAll(".yearExpressedText").remove();
-    
+
     for (x = 0; x < keyArray.length; x++){
         if (year == keyArray[x]) {
              yearExpressed = keyArray[x];
@@ -489,7 +489,7 @@ function changeAttribute(year, colorize){
             .text(function(d) {
                 return choropleth(d, colorize);
         });
-     //alters timeline year text    
+     //alters timeline year text
     var timelineYear = d3.select(".timeline")
         .selectAll('g')
         .attr("font-weight", function(d){
@@ -515,19 +515,19 @@ function changeAttribute(year, colorize){
 }; //END changeAttribute
 
 
-//creates the menu items 
+//creates the menu items
 function createMenu(arrayX, arrayY, title, infotext, infolink){
     var yArray = [40, 85, 130, 175, 220, 265];
     var oldItems = d3.selectAll(".menuBox").remove();
     var oldItems2 = d3.selectAll(".menuInfoBox").remove();
-    
+
     //creates menuBoxes
     menuBox = d3.select(".menu-inset")
             .append("svg")
             .attr("width", menuWidth)
             .attr("height", menuHeight)
             .attr("class", "menuBox");
-    
+
     //creates Menu Title
     var menuTitle = menuBox.append("text")
         .attr("x", 10)
@@ -535,9 +535,9 @@ function createMenu(arrayX, arrayY, title, infotext, infolink){
         .attr("class","title")
         .text(title)
         .style("font-size", '16px');
-    
+
     //draws and shades boxes for menu
-    for (b = 0; b < arrayX.length; b++){  
+    for (b = 0; b < arrayX.length; b++){
        var menuItems = menuBox.selectAll(".items")
             .data(arrayX)
             .enter()
@@ -546,14 +546,14 @@ function createMenu(arrayX, arrayY, title, infotext, infolink){
             .attr("width", 35)
             .attr("height", 35)
             .attr("x", 15);
-        
+
         menuItems.data(yArray)
             .attr("y", function(d, i){
                 return d;
             });
-        
+
         menuItems.data(arrayY)
-            .attr("fill", function(d, i){ 
+            .attr("fill", function(d, i){
                 return arrayY[i];
             });
     };
@@ -570,12 +570,12 @@ function createMenu(arrayX, arrayY, title, infotext, infolink){
             }
         })
         .style({'font-size': '14px', 'font-family': 'Open Sans, sans-serif'});
-    
+
         menuLabels.data(yArray)
             .attr("y", function(d, i){
                 return d + 30;
             });
-    
+
      //creates menuBoxes
     menuInfoBox = d3.select(".menu-info")
         .append("div")
@@ -599,8 +599,8 @@ function overlay(path, cpcRadius, abortionRadius, map, cpc, abortionprovider){
             cpcInsetDiv.style.visibility = "visible";
         }
     });
-    
-    $(".abortion-section").click(function(){  
+
+    $(".abortion-section").click(function(){
         var abortionDiv = document.getElementById('abortion-centers');
         var insetDiv = document.getElementById('abortion-inset');
         if (d3.selectAll(".abortionLocations")[0].length > 0){
@@ -611,7 +611,7 @@ function overlay(path, cpcRadius, abortionRadius, map, cpc, abortionprovider){
             abortionPoints(map, abortionprovider, path, abortionRadius);
             insetDiv.style.visibility = "visible";
         }
-    }); 
+    });
 }; //END overlay function
 
 //creates cpc point data
@@ -624,8 +624,8 @@ function cpcPoints(map, cpc, path, cpcRadius){
         .attr("class", "cpcLocations")
         .attr('d', path.pointRadius(function(d){
             return cpcRadius(d.properties.Count);
-        }));   
-    
+        }));
+
     //creates menuBoxes
     var menuInfoBox = d3.select(".sequence-buttons")
         .append("div")
@@ -646,7 +646,7 @@ function abortionPoints(map, abortionprovider, path, abortionRadius){
         .attr('d', path.pointRadius(function(d){
             return abortionRadius(d.properties.Count);
         }));
-    
+
     //creates menuBoxes
     var menuInfoBox = d3.select(".sequence-buttons")
         .append("div")
@@ -664,14 +664,14 @@ function createInset() {
     var cpcLabelArray = [1, 4, 8];
     var abortionRadiusArray = [2, 16.23, 23];
     var abortionLabelArray = [1, 6, 11];
-    
+
     //creates menuBoxes
     cpcMenuBox = d3.select(".cpc-inset")
             .append("svg")
             .attr("width", otherMenuWidth)
             .attr("height", otherMenuHeight)
             .attr("class", "cpcmenuBox");
-    
+
     //draws and shades circles for menu
    var cpcCircles = cpcMenuBox.selectAll(".cpcCircles")
         .data(cpcRadiusArray)
@@ -685,8 +685,8 @@ function createInset() {
             return d;
         })
         .attr("class", "cpcCircles")
-        .style({'fill': '#FA6E39','fill-opacity': '0.7'});  
-    
+        .style({'fill': '#FA6E39','fill-opacity': '0.7'});
+
     //labels cpc circles
     var cpcLabels = cpcMenuBox.selectAll(".cpcOverlayLabels")
         .data(cpcLabelArray)
@@ -700,7 +700,7 @@ function createInset() {
             }
         })
         .style({'font-size': '14px', 'font-family': 'Open Sans, sans-serif'});
-    
+
         cpcLabels.data(cpcRadiusArray)
             .attr("x", function(d, i){
                 return (2*d)+(i*50)+15;
@@ -711,7 +711,7 @@ function createInset() {
         .attr("width", otherMenuWidth)
         .attr("height", otherMenuHeight)
         .attr("class", "abortionMenuBox");
-    
+
      //draws and shades circles for menu
     var abortionCircles = abortionMenuBox.selectAll(".abortionCircles")
         .data(abortionRadiusArray)
@@ -725,8 +725,8 @@ function createInset() {
             return d;
         })
         .attr("class", "abortionCircles")
-        .style({'fill': '#37C4AB','fill-opacity': '0.7'}); 
-    
+        .style({'fill': '#37C4AB','fill-opacity': '0.7'});
+
     //labels abortion circles
     var abortionLabels = abortionMenuBox.selectAll(".abortionOverlayLabels")
         .data(abortionLabelArray)
@@ -740,11 +740,11 @@ function createInset() {
             }
         })
         .style({'font-size': '14px', 'font-family': 'Open Sans, sans-serif'});
-    
+
         abortionLabels.data(abortionRadiusArray)
             .attr("x", function(d, i){
                 return (2*d)+(i*50)+15;
-            });  
+            });
 }; //END create inset
 
 //---------------------------------------------//
@@ -753,7 +753,7 @@ function createInset() {
 //SET UP COLOR ARRAYS FOR MAP
 function colorScale(data){
 // this if/else statement determines which variable is currently being expressed and assigns the appropriate color scheme to currentColors
-    if (expressed === "gradeData") {   
+    if (expressed === "gradeData") {
         currentColors = colorArrayOverview;
         currentArray = arrayOverview;
     } else if (expressed === "consentData") {
@@ -775,12 +775,12 @@ function colorScale(data){
 
     scale = d3.scale.ordinal()
                 .range(currentColors)
-                .domain(currentArray); //sets the range of colors and domain of values based on the currently selected 
+                .domain(currentArray); //sets the range of colors and domain of values based on the currently selected
     return scale(data[yearExpressed]);
 };
 //Sets up color scale for chart
 function colorScaleChart(data) {
-    if (expressed === "gradeData") {   
+    if (expressed === "gradeData") {
         currentColors = colorArrayOverview;
         currentArray = arrayOverview;
     } else if (expressed === "consentData") {
@@ -802,7 +802,7 @@ function colorScaleChart(data) {
 
     scale = d3.scale.ordinal()
                 .range(currentColors)
-                .domain(currentArray); 
+                .domain(currentArray);
 
     return scale(data);
 }; //end Colorscale
@@ -834,7 +834,7 @@ function setChart(yearExpressed) {
         .attr("width", chartWidth+"px")
         .attr("height", chartHeight+"px")
         .attr("class", "chart");
-        
+
     //put all rects in a g element
     var squareContainer = chart.append("g")
         .attr("transform", "translate(" + margin.left + ', ' + margin.top + ')');
@@ -861,12 +861,12 @@ function setChart(yearExpressed) {
                 yearObjectArray.push({"year": Number(keyArray[key]), "count":yearCount});
                 yearCount = yearCount++;
             };
-        };   
+        };
     };
 
     //attach data to the rects and start drawing them
     chartRect = squareContainer.selectAll(".chartRect")
-        .data(timelineFeatureArray) //use data from the timelineFeatureArray, which holds all of the states that had some change in law 
+        .data(timelineFeatureArray) //use data from the timelineFeatureArray, which holds all of the states that had some change in law
         .enter()
         .append("rect") //create a rectangle for each state
         .attr("class", function(d) {
@@ -874,7 +874,7 @@ function setChart(yearExpressed) {
         })
         .attr("width", squareWidth+"px")
         .attr("height", squareHeight+"px");
-    
+
     //determine the x-scale for the rects, determing where along the x-axis they will be drawn according to which year the law changed
     var x = d3.scale.linear()
         .domain([keyArray[0], keyArray[keyArray.length-1]]) //domain is an array of 2 values: the first and last years in the keyArray (1973 and 2014)
@@ -935,9 +935,9 @@ function setChart(yearExpressed) {
         .attr('transform', 'translate(' + timelineMargin.left + ',' + (chartHeight - timelineMargin.top - timelineMargin.bottom) + ')') //set the starting x,y coordinates for where the axis will be drawn
         .attr("class", "timeline")
         .call(axis); //calls the axis function on the timeline
-    
+
     //adds mouse events
-    timeline.selectAll('g') 
+    timeline.selectAll('g')
         .each(function(d){
             d3.select(this)
              .on("mouseover", function(){
@@ -1102,7 +1102,7 @@ function dehighlight(data) {
 
     //dehighlighting the states
     var selection = d3.selectAll("."+feature.postal)
-        .filter(".states");    
+        .filter(".states");
     var fillColor = selection.select("desc").text();
     selection.style("fill", fillColor);
 
@@ -1121,6 +1121,6 @@ var timer = $.timer(function() {
             yearExpressed = keyArray[0];
         };
         animateMap(yearExpressed, colorize, yearExpressedText);
-        timeMapSequence(yearExpressed);  
+        timeMapSequence(yearExpressed);
 	});
 timer.set({ time : 800, autostart : false });
