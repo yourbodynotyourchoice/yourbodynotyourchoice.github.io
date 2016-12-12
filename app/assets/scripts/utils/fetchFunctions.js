@@ -76,15 +76,15 @@ export function makeDescriptions (view) {
   if (view === 'overview') {
     return getDescription(grades, view, Grades)
   } else if (view === 'prohibit') {
-    return getDescription(mandated, view, Prohibited)
+    return getDescription(prohibit, view, Prohibited)
   } else if (view === 'consoluing') {
-    return getDescription(parent, view, Mandated)
+    return getDescription(mandated, view, Mandated)
   } else if (view === 'waiting') {
-    return getDescription(prohibit, view, Waiting)
+    return getDescription(waiting, view, Waiting)
   } else if (view === 'parent') {
-    return getDescription(ultra, view, Parental)
+    return getDescription(parent, view, Parental)
   } else if (view === 'ultra') {
-    return getDescription(waiting, view, Ultra)
+    return getDescription(ultra, view, Ultra)
   }
 }
 
@@ -109,4 +109,20 @@ function getDescription (data, view, wordBank) {
   })
 
   return newIndex
+}
+
+export function getFetcher (view) {
+  if (view === 'overview') {
+    return Grades
+  } else if (view === 'prohibit') {
+    return Prohibited
+  } else if (view === 'consoluing') {
+    return Mandated
+  } else if (view === 'waiting') {
+    return Waiting
+  } else if (view === 'parent') {
+    return Parental
+  } else if (view === 'ultra') {
+    return Ultra
+  }
 }

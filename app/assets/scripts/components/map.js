@@ -1,7 +1,8 @@
 'use strict'
 import React from 'react'
 import mapboxgl from 'mapbox-gl'
-import { makeColorScale, makeDescriptions } from '../utils/color-scale'
+import { makeColorScale, makeDescriptions } from '../utils/fetchFunctions'
+import Legend from './legend'
 
 class Map extends React.Component {
 
@@ -10,6 +11,13 @@ class Map extends React.Component {
     this.state = {
       view: props.view
     }
+    this.setView = this.setView.bind(this)
+  }
+
+  setView (waffle) {
+    this.setState({
+      view: waffle
+    })
   }
 
   componentDidMount () {
@@ -18,7 +26,7 @@ class Map extends React.Component {
     this.map = new mapboxgl.Map({
       container: this.container,
       center: [0, 0],
-      zoom: 2.2,
+      zoom: 2.5,
       style: {
         version: 8,
         sources: {
@@ -46,45 +54,18 @@ class Map extends React.Component {
             }
           }
         }]
-      }
+      },
+      interactive: false
     })
 
-    // this.map.addControl(new mapboxgl.NavigationControl({position: 'bottom-right'}))
-    this.map.dragRotate.disable()
-    this.map.scrollZoom.disable()
-    this.map.touchZoomRotate.disableRotation()
-
     var self = this
+    var descrip = makeDescriptions(this.state.view)
     var descriptions
 
     var popup = new mapboxgl.Popup({
       closeButton: false,
       closeOnClick: false
     })
-
-    this.map.on('mousemove', function (e) {
-      var features = self.map.queryRenderedFeatures(e.point, { layers: ['usa'] })
-      self.map.getCanvas().style.cursor = (features.length) ? 'pointer' : ''
-
-      if (!features.length) {
-        popup.remove()
-        return
-      }
-
-      popup.setLngLat(e.lngLat)
-        .setHTML('mooo')
-        .addTo(self.map)
-    })
-
-    this.updatePopup(popup, makeDescriptions(this.state.view))
-
-    this.map.on('load', () => {
-    })
-  }
-
-  updatePopup (popup, descrip) {
-    var self = this
-    var descriptions
 
     this.map.on('mousemove', function (e) {
       var features = self.map.queryRenderedFeatures(e.point, { layers: ['usa'] })
@@ -103,23 +84,26 @@ class Map extends React.Component {
 
       var description = '<div><p>' + feature.properties.name + '</p><p>' + descriptions + '</div>'
 
-      popup.setLngLat(e.lngLat).setHTML(description)
+      popup.setLngLat(e.lngLat)
+        .setHTML(description)
+        .addTo(self.map)
+    })
+
+    this.map.on('load', () => {
     })
   }
 
   componentWillReceiveProps (next) {
     if (next.view !== this.props.view) {
+      this.setView(next.view)
+
       var colorScale = makeColorScale(next.view)
       var descrScale = makeDescriptions(next.view)
-
-      console.log(descrScale)
 
       var popup = new mapboxgl.Popup({
         closeButton: false,
         closeOnClick: false
       })
-
-      this.updatePopup(popup, descrScale)
 
       this.map.removeLayer('usa')
       this.map.addLayer({
@@ -139,15 +123,45 @@ class Map extends React.Component {
 
   render () {
     return (
-      <div style={Object.assign({
-        height: '100%'
-      }, this.props.style)}>
+      <section className='Map-content'>
+
         <div className='main-map'
           ref={(el) => { this.container = el }}>
         </div>
-      </div>
+        <div className='map-legend'>
+          <Legend view={this.state.view} />
+        </div>
+      </section>
     )
   }
 }
+
+// updatePopup (popup, descrip) {
+//   // var self = this
+//   // var descriptions
+
+//   // this.map.on('mousemove', function (e) {
+//   //   var features = self.map.queryRenderedFeatures(e.point, { layers: ['usa'] })
+//   //   self.map.getCanvas().style.cursor = (features.length) ? 'pointer' : ''
+
+//   //   if (!features.length) {
+//   //     popup.remove()
+//   //     return
+//   //   }
+
+//   //   var feature = features[0]
+
+//   //   if (descrip) {
+//   //     descriptions = descrip[feature.properties.statefp]
+//   //   }
+
+//   //   var description = '<div><p>' + feature.properties.name + '</p><p>' + descriptions + '</div>'
+
+//   //   popup.setLngLat(e.lngLat).setHTML(description)
+//   // })
+// }
+
+// descriptions={this.state.descriptions}
+//          <Legend view={this.state.view} />
 
 module.exports = Map

@@ -3,7 +3,6 @@ import React from 'react'
 import c from 'classnames'
 import Header from './components/header'
 import Map from './components/map'
-import Legend from './components/legend'
 import Timeline from './components/timeline'
 import About from './components/about'
 
@@ -75,13 +74,9 @@ class MainContent extends React.Component {
         </ul>
       </section>
 
-      <section className='Map-content'>
+      <div className='top-content'>
         <Map view={this.state.view} />
-      </section>
-
-      <section className='Map-legend'>
-        <Legend />
-      </section>
+      </div>
 
       <section className='Timeline-info'>
         <Timeline />
