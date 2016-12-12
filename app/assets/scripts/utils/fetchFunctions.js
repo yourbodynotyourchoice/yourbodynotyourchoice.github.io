@@ -13,6 +13,7 @@ var stateCodeClone
 var newIndex = {}
 var index
 var emptyIndex = []
+var colorArray = []
 var color
 var descrip
 var year = 2013
@@ -22,28 +23,35 @@ var Mandated = ['No', 'Yes']
 var Waiting = ['None', '18 Hours', '24 Hours', '48 Hours', '72 Hours']
 var Parental = ['None', 'Notice', 'Consent']
 var Ultra = ['None', 'Must be infomed', 'Must be offered', 'Must be performed']
+var color0 = '#97d3bd'
+var color1 = '#f2d766'
+var color2 = '#f3b373'
+var color3 = '#ea765c'
+var color4 = '#db1f26'
+var color5 = '#9a1c22'
 
 export function makeColorScale (view) {
   if (view === 'overview') {
-    return buildColorScale(grades, view)
+    return buildColorScale(grades, view, 5)
   } else if (view === 'prohibit') {
-    return buildColorScale(mandated, view)
+    return buildColorScale(prohibit, view, 6)
   } else if (view === 'consoluing') {
-    return buildColorScale(parent, view)
+    return buildColorScale(mandated, view, 2)
   } else if (view === 'waiting') {
-    return buildColorScale(prohibit, view)
+    return buildColorScale(waiting, view, 5)
   } else if (view === 'parent') {
-    return buildColorScale(ultra, view)
+    return buildColorScale(parent, view, 3)
   } else if (view === 'ultra') {
-    return buildColorScale(waiting, view)
+    return buildColorScale(ultra, view, 4)
   } else if (view === 'crisis') {
     return [[1, '#ccc']]
   }
 }
 
-function buildColorScale (data, view) {
+function buildColorScale (data, view, length) {
   newIndex = []
   emptyIndex = []
+  colorArray = matchupColors(length)
 
   for (var i = 49; i >= 0; i--) {
     if (view === 'overview') {
@@ -51,22 +59,16 @@ function buildColorScale (data, view) {
     } else {
       index = data[stateCode[i]][year]
     }
-    if (index === 0) {
-      color = '#fbe6c5'
-    } else if (index === 1) {
-      color = '#ee8a82'
-    } else if (index === 2) {
-      color = '#ee8a82'
-    } else if (index === 3) {
-      color = '#c8586c'
-    } else if (index === 4) {
-      color = '#70284a'
+    for (var j = length - 1; j >= 0; j--) {
+      if (index === j) {
+        color = colorArray[j]
+      }
     }
     emptyIndex.push(color)
   }
 
-  for (var j = emptyIndex.length - 1; j >= 0; j--) {
-    newIndex[j] = [stateCode[j], emptyIndex[j]]
+  for (var k = emptyIndex.length - 1; k >= 0; k--) {
+    newIndex[k] = [stateCode[k], emptyIndex[k]]
   }
 
   return newIndex
@@ -124,5 +126,37 @@ export function getFetcher (view) {
     return Parental
   } else if (view === 'ultra') {
     return Ultra
+  }
+}
+
+export function fetchColors (view) {
+  if (view === 'overview') {
+    return ['0', '1', '2', '3', '4']
+  } else if (view === 'prohibit') {
+    return ['0', '1', '2', '3', '4', '5']
+  } else if (view === 'consoluing') {
+    return ['0', '3']
+  } else if (view === 'waiting') {
+    return ['0', '1', '2', '3', '5']
+  } else if (view === 'parent') {
+    return ['0', '1', '3']
+  } else if (view === 'ultra') {
+    return ['0', '1', '2', '3']
+  } else if (view === 'crisis') {
+    return [[1, '#ccc']]
+  }
+}
+
+function matchupColors (length) {
+  if (length === 2) {
+    return [color0, color3]
+  } else if (length === 3) {
+    return [color0, color1, color3]
+  } else if (length === 4) {
+    return [color0, color1, color2, color3]
+  } else if (length === 5) {
+    return [color0, color1, color2, color3, color4]
+  } else if (length === 6) {
+    return [color0, color1, color2, color3, color4, color5]
   }
 }

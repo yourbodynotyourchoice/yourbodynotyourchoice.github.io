@@ -1,6 +1,6 @@
 'use strict'
 import React from 'react'
-import { getFetcher } from '../utils/fetchFunctions'
+import { getFetcher, fetchColors } from '../utils/fetchFunctions'
 
 class Legend extends React.Component {
   constructor (props) {
@@ -11,7 +11,7 @@ class Legend extends React.Component {
     this.setView = this.setView.bind(this)
   }
 
-  setView (view, color, data) {
+  setView (view) {
     this.setState({
       view: view
     })
@@ -26,11 +26,14 @@ class Legend extends React.Component {
   getLegendInfo (view) {
     var legendKey = getFetcher(view)
     var legendDescriptions = []
+    var colorArray = fetchColors(view)
 
     for (var i = legendKey.length - 1; i >= 0; i--) {
-      var legendBoxColor = 'legendBox legend-' + i
-      legendDescriptions.push(<li><div className={legendBoxColor}></div><div className='legendText' key={i}>{legendKey[i]}</div></li>)
+      var legendBoxColor = 'legendBox legend-' + colorArray[i]
+      legendDescriptions.push(<li key={i}><div className={legendBoxColor}></div><div className='legendText' key={i}>{legendKey[i]}</div></li>)
     }
+
+    legendDescriptions.reverse()
 
     return (
       <div>

@@ -141,7 +141,6 @@ h2 {
 .map-legend {
   width: 200px;
   height: 200px;
-  border: 1px solid green;
   float: left;
   margin-left: 2rem;
 }
@@ -197,4 +196,28 @@ h2 {
   height: 1px;
   background-color: #ccc;
   width: 100%;
+}
+
+.legend-0 {
+  background-color: #97d3bd;
+}
+
+.legend-1 {
+  background-color: #f2d766;
+}
+
+.legend-2 {
+  background-color: #f3b373;
+}
+
+.legend-3 {
+  background-color: #ea765c;
+}
+
+.legend-4 {
+  background-color: #db1f26;
+}
+
+.legend-5 {
+  background-color: #9a1c22;
 }

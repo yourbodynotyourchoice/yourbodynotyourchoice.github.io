@@ -4,6 +4,11 @@ import mapboxgl from 'mapbox-gl'
 import { makeColorScale, makeDescriptions } from '../utils/fetchFunctions'
 import Legend from './legend'
 
+var popup = new mapboxgl.Popup({
+  closeButton: false,
+  closeOnClick: false
+})
+
 class Map extends React.Component {
 
   constructor (props) {
@@ -53,19 +58,31 @@ class Map extends React.Component {
               stops: makeColorScale(this.state.view)
             }
           }
+        },
+        {
+          id: 'usa-outline',
+          type: 'line',
+          source: 'usa',
+          'source-layer': 'usa-simple-0m5fzt',
+          paint: {
+            'line-color': '#000',
+            'line-width': 0.25
+          }
         }]
       },
       interactive: false
     })
 
-    var self = this
-    var descrip = makeDescriptions(this.state.view)
-    var descriptions
+    this.updatePopup(this.state.view)
 
-    var popup = new mapboxgl.Popup({
-      closeButton: false,
-      closeOnClick: false
+    this.map.on('load', () => {
     })
+  }
+
+  updatePopup (view) {
+    var self = this
+    var descrip = makeDescriptions(view)
+    var descriptions
 
     this.map.on('mousemove', function (e) {
       var features = self.map.queryRenderedFeatures(e.point, { layers: ['usa'] })
@@ -88,9 +105,6 @@ class Map extends React.Component {
         .setHTML(description)
         .addTo(self.map)
     })
-
-    this.map.on('load', () => {
-    })
   }
 
   componentWillReceiveProps (next) {
@@ -98,12 +112,6 @@ class Map extends React.Component {
       this.setView(next.view)
 
       var colorScale = makeColorScale(next.view)
-      var descrScale = makeDescriptions(next.view)
-
-      var popup = new mapboxgl.Popup({
-        closeButton: false,
-        closeOnClick: false
-      })
 
       this.map.removeLayer('usa')
       this.map.addLayer({
@@ -117,7 +125,16 @@ class Map extends React.Component {
             stops: colorScale
           }
         }
-      })
+      }, 'usa-outline')
+
+      popup.remove()
+      this.updatePopup(next.view)
+
+      this.map.remove
+
+      // this.map.on('mousemove', function (e) {
+
+      // })
     }
   }
 
