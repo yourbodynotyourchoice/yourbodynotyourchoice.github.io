@@ -12,7 +12,8 @@ class MainContent extends React.Component {
   constructor () {
     super()
     this.state = {
-      view: 'overview'
+      view: 'overview',
+      year: 2013
     }
     this.setView = this.setView.bind(this)
     this.setView2 = this.setView2.bind(this)
@@ -36,7 +37,7 @@ class MainContent extends React.Component {
     this.setSet('prohibit')
   }
   setView3 () {
-    this.setSet('consoluing')
+    this.setSet('counseling')
   }
   setView4 () {
     this.setSet('waiting')
@@ -66,7 +67,7 @@ class MainContent extends React.Component {
         <ul>
           <Link to='/overview'><li className={c('sidebar__option', {'sidebar__option--active': this.state.view === 'overview'})} onClick={this.setView} >Overall Score</li></Link>
           <Link to='/prohibit'><li className={c('sidebar__option', {'sidebar__option--active': this.state.view === 'prohibit'})} onClick={this.setView2} >Prohibited At</li></Link>
-          <Link to='/consoluing'><li className={c('sidebar__option', {'sidebar__option--active': this.state.view === 'consoluing'})} onClick={this.setView3} >Mandated Consoluing</li></Link>
+          <Link to='/counseling'><li className={c('sidebar__option', {'sidebar__option--active': this.state.view === 'counseling'})} onClick={this.setView3} >Mandated Consoluing</li></Link>
           <Link to='/waiting'><li className={c('sidebar__option', {'sidebar__option--active': this.state.view === 'waiting'})} onClick={this.setView4} >Waiting Period</li></Link>
           <Link to='/parent'><li className={c('sidebar__option', {'sidebar__option--active': this.state.view === 'parent'})} onClick={this.setView5} >Parental Consent</li></Link>
           <Link to='/ultra'><li className={c('sidebar__option', {'sidebar__option--active': this.state.view === 'ultra'})} onClick={this.setView6} >Mandatory Ultrasound</li></Link>
@@ -75,7 +76,7 @@ class MainContent extends React.Component {
       </section>
 
       <div className='top-content'>
-        <Map view={this.state.view} />
+        <Map view={this.state.view} year={this.state.year} />
       </div>
 
       <section className='Timeline-info'>

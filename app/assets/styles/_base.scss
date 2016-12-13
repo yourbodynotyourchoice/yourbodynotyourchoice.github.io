@@ -126,14 +126,14 @@ h2 {
 }
 
 .Map-content {
-  width: 600px;
-  height: 350px;
+  width: 900px;
+  height: 300px;
   margin-left: 17rem;
   float: left;
 }
 
 .main-map {
-  width: 350px;
+  width: 550px;
   height: 350px;
   float: left;
 }
@@ -165,7 +165,13 @@ h2 {
   padding: 0;
 }
 
+.popupState {
+  font-weight: 800;
+  border-bottom: 1px solid black;
+}
+
 /*
+
 .legend__content {
   width: 300px;
   height: 350px;
@@ -177,11 +183,30 @@ h2 {
 .analaysis__content {
   margin-left: 17rem;
   margin-right: 6rem;
+  font-size: 1rem;
+  line-height: 1.8rem;
+  p {
+    margin-bottom: 1rem;
+  }
+  h2 {
+    padding: 0.5rem 1rem;
+    color: white;
+    background-color: #525353;
+    display: inline-block;
+    clear: both;
+    margin: 2rem 0;
+  }
+  h3 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin: 1.5rem 0;
+  }
 }
 
 .about__content {
   margin-left: 17rem;
   margin-right: 6rem;
+  line-height: 1.8rem;
 }
 
 .about__content--header {
@@ -199,25 +224,32 @@ h2 {
 }
 
 .legend-0 {
-  background-color: #97d3bd;
+  background-color: #fbe6c5;
 }
 
 .legend-1 {
-  background-color: #f2d766;
+  background-color: #f5ba98;
 }
 
 .legend-2 {
-  background-color: #f3b373;
+  background-color: #ee8a82;
 }
 
 .legend-3 {
-  background-color: #ea765c;
+  background-color: #dc7176;
 }
 
 .legend-4 {
-  background-color: #db1f26;
+  background-color: #c8586c;
 }
 
 .legend-5 {
-  background-color: #9a1c22;
+  background-color: #9c3f5d;
+}
+
+.testing-box {
+  z-index: 9999;
+  width: 25px;
+  height: 25px;
+  background-color: green;
 }

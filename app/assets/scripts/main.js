@@ -6,7 +6,7 @@ import MainContent from './app'
 import { Router, Route, hashHistory } from 'react-router'
 import Overview from './sections/overview'
 import Prohibit from './sections/prohibit'
-import Consoluing from './sections/consoluing'
+import Consoluing from './sections/counseling'
 import Waiting from './sections/waiting'
 import Parent from './sections/parent'
 import Ultra from './sections/ultra'
@@ -42,7 +42,7 @@ class App extends React.Component {
             {/* make them children of `App` */}
             <Route path='/overview' component={Overview}/>
             <Route path='/prohibit' component={Prohibit}/>
-            <Route path='/consoluing' component={Consoluing}/>
+            <Route path='/counseling' component={Consoluing}/>
             <Route path='/waiting' component={Waiting}/>
             <Route path='/parent' component={Parent}/>
             <Route path='/ultra' component={Ultra}/>
